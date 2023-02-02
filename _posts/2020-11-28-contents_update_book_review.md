@@ -28,4 +28,27 @@ tags: [news]
   
   - [주홍색 연구 · 네 사람의 서명 - 아서 코난 도일](https://ddbook.tistory.com/10)
 
+  ### 프로그래밍
+
+  #### 중복참조 방지
+
+  1. inclusion guard
+  foo.h 가 한번도 정의되지 않았을 때에만 참조 한번 이라도 정의되었다면 ifndef구문 내의 함수는 참조하지 않음
+
+  ~~~
+  #ifndef FOO_H
+  #define FOO_H
+  include "foo.h"
+  #endif 
+  ~~~
+  
+  2. #pragma once
+  #pragma once는 한 번만 include 하라는 옵션으로 아래의 경우 foo.h와 bar.h의 include가 한번만 포함됨을 보장한다.
+  
+  ~~~
+  #pragma once
+  #include "foo.h"
+  #include "bar.h"
+  ~~~
+
 {% include links.html %}
